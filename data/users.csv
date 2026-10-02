@@ -1,0 +1,8 @@
+user_id,display_name,user_type,account_enabled,external_user_state,invited_at,department
+U001,Aylin Demir,Member,True,,,IT
+U002,Jonas Weber,Member,True,,,HR
+U003,Mara König,Member,False,,,Sales
+U004,Sofia Rossi,Guest,True,Accepted,2026-08-12,External
+U005,Daniel Novak,Guest,True,PendingAcceptance,2026-07-20,External
+U006,Lea Martin,Guest,True,PendingAcceptance,2026-09-20,External
+

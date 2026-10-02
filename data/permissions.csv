@@ -1,0 +1,9 @@
+permission_id,resource_id,principal_id,principal_name,principal_type,role,assignment_type,granted_at
+P001,R001,G001,Company Portal Members,Group,Edit,Group,2026-02-01
+P002,R001,G002,Company Portal Owners,Group,Owner,Group,2026-02-01
+P003,R002,G003,IT Project Members,Group,Edit,Group,2026-03-01
+P004,R003,G004,HR Members,Group,Edit,Group,2026-02-10
+P005,R004,U002,Jonas Weber,User,Owner,Direct,2026-03-05
+P006,R005,U004,Sofia Rossi,User,Edit,Direct,2026-08-15
+P007,R005,U005,Daniel Novak,User,Read,Direct,2026-07-20
+P008,R006,U003,Mara König,User,Owner,Direct,2026-02-20

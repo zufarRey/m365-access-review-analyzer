@@ -1,0 +1,8 @@
+resource_id,resource_name,resource_type,parent_resource_id,sensitivity,owner_user_id,inheritance_broken,inheritance_reason,external_access_allowed
+R001,Company Portal,Site,,Medium,U001,False,,False
+R002,IT Projects,Library,R001,Medium,U001,False,,False
+R003,HR Portal,Site,,High,U002,False,,False
+R004,Personnel Files,Library,R003,High,U002,True,Restricted access for HR staff,False
+R005,Partner Documents,Library,R001,High,U001,True,,True
+R006,Legacy Sales,Site,,Medium,U003,False,,False
+
