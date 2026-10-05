@@ -15,6 +15,11 @@ def main():
         resources)
     print(undocumented_broken_inheritance)
 
+    permissions = load_csv('permissions.csv')
+    disabled_users_with_permissions = find_disabled_users_with_permissions(
+        users, permissions, resources)
+    print(disabled_users_with_permissions)
+
 
 def find_stale_pending_guest_invitations(user_dataframe, reference_date, maximum_age_days=30):
     pending_guests = user_dataframe[(user_dataframe["user_type"] == "Guest") & (
@@ -35,6 +40,35 @@ def find_undocumented_broken_inheritance(resources_dataframe):
     undocumented_broken_inheritance = resources_dataframe[
         has_broken_inheritance & has_missing_reason].copy()
     return undocumented_broken_inheritance
+
+
+def find_disabled_users_with_permissions(user_dataframe, permission_dataframe, resources_dataframe):
+    is_inactive_account = user_dataframe['account_enabled'] == False
+    inactive_accounts = user_dataframe[is_inactive_account].copy()
+
+    permissions = permission_dataframe[(permission_dataframe['principal_type'] == "User")
+                                       & (permission_dataframe["assignment_type"] == "Direct")].copy()
+
+    permissions_of_inactive_accounts = inactive_accounts.merge(
+        permissions, left_on="user_id", right_on="principal_id", how="inner")
+
+    permissions_of_inactive_accounts = permissions_of_inactive_accounts.merge(
+        resources_dataframe, on="resource_id", how="left")
+    relevant_columns = [
+        "user_id",
+        "display_name",
+        "account_enabled",
+        "permission_id",
+        "resource_id",
+        "resource_name",
+        "resource_type",
+        "sensitivity",
+        "role",
+        "assignment_type",
+        "granted_at",
+        "owner_user_id",
+    ]
+    return permissions_of_inactive_accounts[relevant_columns]
 
 
 if __name__ == "__main__":
