@@ -2,10 +2,14 @@ import pandas as pd
 
 from src.data_loader import load_csv
 
+from src.report_generator import create_excel_report
+
+from pathlib import Path
+
 
 def main():
     users = load_csv('users.csv')
-    reference_date = pd.Timestamp("2026-10-05")
+    reference_date = pd.Timestamp.today().normalize()
     pending_guests = find_stale_pending_guest_invitations(
         users, reference_date)
     print(pending_guests)
@@ -19,6 +23,18 @@ def main():
     disabled_users_with_permissions = find_disabled_users_with_permissions(
         users, permissions, resources)
     print(disabled_users_with_permissions)
+
+    findings_by_sheet = {
+        "Stale Guest Invitations": pending_guests,
+        "Broken Inheritance": undocumented_broken_inheritance,
+        "Disabled User Access": disabled_users_with_permissions
+
+    }
+
+    project_root = Path(__file__).resolve().parent.parent
+    output_path = project_root / "output" / "access_review_report.xlsx"
+    report_path = create_excel_report(findings_by_sheet, output_path)
+    print(f"Report erstellt:{report_path}")
 
 
 def find_stale_pending_guest_invitations(user_dataframe, reference_date, maximum_age_days=30):
