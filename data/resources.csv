@@ -5,4 +5,9 @@ R003,HR Portal,Site,,High,U002,False,,False
 R004,Personnel Files,Library,R003,High,U002,True,Restricted access for HR staff,False
 R005,Partner Documents,Library,R001,High,U001,True,,True
 R006,Legacy Sales,Site,,Medium,U003,False,,False
-
+R007,Product Development,Site,,Medium,U007,False,,False
+R008,Architecture Documents,Library,R007,High,U008,True,,False
+R009,Procurement Portal,Site,,Medium,U015,False,,False
+R010,Supplier Contracts,Library,R009,High,U015,True,Restricted to procurement and legal teams,False
+R011,Operations Archive,Library,R001,Medium,U013,True,,False
+R012,External Collaboration,Site,,High,U001,True,External sharing approved for partner project,True

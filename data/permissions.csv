@@ -7,3 +7,15 @@ P005,R004,U002,Jonas Weber,User,Owner,Direct,2026-03-05
 P006,R005,U004,Sofia Rossi,User,Edit,Direct,2026-08-15
 P007,R005,U005,Daniel Novak,User,Read,Direct,2026-07-20
 P008,R006,U003,Mara König,User,Owner,Direct,2026-02-20
+P009,R008,U008,Nina Bauer,User,Owner,Direct,2026-04-10
+P010,R011,U013,Karim Hassan,User,Edit,Direct,2026-05-12
+P011,R009,U015,Luca Pereira,User,Owner,Direct,2026-04-20
+P012,R010,U014,Emma Schneider,User,Read,Direct,2026-06-15
+P013,R012,U009,Amir Rahman,User,Read,Direct,2026-06-15
+P014,R007,G005,Product Development Members,Group,Edit,Group,2026-04-01
+P015,R009,G006,Procurement Members,Group,Edit,Group,2026-04-20
+P016,R011,G007,Operations Archive Readers,Group,Read,Group,2026-05-01
+P017,R004,U014,Emma Schneider,User,Read,Direct,2026-06-20
+P018,R012,U011,Mark Chen,User,Edit,Direct,2026-05-12
+P019,R012,U012,Julia Brown,User,Read,Direct,2026-10-01
+P020,R007,G008,Product Development Owners,Group,Owner,Group,2026-04-01
