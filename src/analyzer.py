@@ -1,10 +1,8 @@
+from pathlib import Path
 import pandas as pd
 
 from src.data_loader import load_csv
-
 from src.report_generator import create_excel_report
-
-from pathlib import Path
 
 
 def main():
@@ -34,7 +32,7 @@ def main():
     project_root = Path(__file__).resolve().parent.parent
     output_path = project_root / "output" / "access_review_report.xlsx"
     report_path = create_excel_report(findings_by_sheet, output_path)
-    print(f"Report erstellt:{report_path}")
+    print(f"Report erstellt: {report_path}")
 
 
 def find_stale_pending_guest_invitations(user_dataframe, reference_date, maximum_age_days=30):
